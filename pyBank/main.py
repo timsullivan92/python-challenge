@@ -104,10 +104,21 @@ gd_date, gd_diff = result
 
 #Print the results
 print(f"Total Months: {total_months}")
-print(f"Total: {round(total)}")
-print(f"PL start: {start_pl}")
-print(f"Average Change: {round(average_pl,2)}")
-print(f"Greatest Increase in Profits:  {gi_date} {round(gi_diff)}")
-print(f"Greatest Decrease in Profits:  {gd_date} {round(gd_diff)}")
+print(f"Total: ${round(total)}")
+print(f"Average Change: ${round(average_pl,2)}")
+print(f"Greatest Increase in Profits:  {gi_date} ${round(gi_diff)}")
+print(f"Greatest Decrease in Profits:  {gd_date} ${round(gd_diff)}")
 
 
+# Create a file called "financial_analysis.txt" in the analysis folder.  
+filepath = os.path.join("analysis","financial_analysis.txt")
+
+# Write to the file path.
+with open(filepath, "w") as file:
+    file.write("Analysis Results:\n")
+    file.write("-----------------\n")
+    file.write(f"Total Months: {total_months}\n")
+    file.write(f"Total: ${round(total)}\n")
+    file.write(f"Average Change: ${round(average_pl,2)}\n")
+    file.write(f"Greatest Increase in Profits: {gi_date} (${round(gi_diff)})\n")
+    file.write(f"Greatest Decrease in Profits: {gd_date} (${round(gd_diff)})\n")
