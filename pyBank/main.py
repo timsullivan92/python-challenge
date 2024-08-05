@@ -78,10 +78,10 @@ def greatest_decrease(filename):
     return date, greatest_decrease
 
 
-#call count_rows function
+#call count_rows function to calculate the total number of months.
 total_months = count_rows(csvpath)
 
-#call profit_total function
+#call profit_total function to calculate the Total profit/loss for all months.
 total = profit_total(csvpath)
 
 #call get value function to get the profit/loss for the first row after header (start_pl) 
@@ -102,18 +102,18 @@ result = greatest_decrease(csvpath)
 gd_date, gd_diff = result
 
 
-#Print the results
+#Print the results to the terminal.
 print(f"Total Months: {total_months}")
 print(f"Total: ${round(total)}")
 print(f"Average Change: ${round(average_pl,2)}")
-print(f"Greatest Increase in Profits:  {gi_date} ${round(gi_diff)}")
-print(f"Greatest Decrease in Profits:  {gd_date} ${round(gd_diff)}")
+print(f"Greatest Increase in Profits:  {gi_date} (${round(gi_diff)})")
+print(f"Greatest Decrease in Profits:  {gd_date} (${round(gd_diff)})")
 
 
 # Create a file called "financial_analysis.txt" in the analysis folder.  
 filepath = os.path.join("analysis","financial_analysis.txt")
 
-# Write to the file path.
+# Write to the to the "financial_analysis.txt" file path
 with open(filepath, "w") as file:
     file.write("Analysis Results:\n")
     file.write("-----------------\n")
